@@ -249,3 +249,93 @@ body {
         margin-bottom: 20px;
     }
 }
+
+/* --- TAMBAHAN STYLE UNTUK VISI & DIREKTORI --- */
+
+/* Utilitas: Text Alignment */
+.text-center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 900px; /* Membatasi lebar agar tulisan enak dibaca */
+    margin: 0 auto;
+}
+
+/* Style Khusus VISI "SERASI" */
+.visi-wrapper {
+    margin-top: 30px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Efek kartu halus */
+    border: 1px solid #f0f0f0;
+}
+
+.acronym-title {
+    font-size: 5rem; /* Ukuran sangat besar */
+    font-weight: 800;
+    letter-spacing: 10px; /* Jarak antar huruf renggang agar elegan */
+    color: #9b72cf; /* Warna ungu utama */
+    margin-bottom: 20px;
+    line-height: 1;
+    background: -webkit-linear-gradient(45deg, #9b72cf, #2c3e50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Efek gradasi pada teks */
+}
+
+.visi-desc {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.visi-desc strong {
+    color: #e85d35; /* Warna oranye untuk penekanan kata */
+    font-weight: 700;
+}
+
+/* Style Khusus DIREKTORI */
+.bg-light {
+    background-color: #f4f4f6; /* Warna latar sedikit berbeda untuk pemisah section */
+}
+
+.directory-narrative {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 750px; /* Agar baris tidak terlalu panjang */
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1rem;
+    border-radius: 50px; /* Tombol lebih bulat */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .acronym-title {
+        font-size: 3rem; /* Kecilkan tulisan SERASI di HP */
+        letter-spacing: 5px;
+    }
+    
+    .visi-desc {
+        font-size: 1.1rem;
+    }
+    
+    .btn-large {
+        width: 100%; /* Tombol memenuhi lebar layar di HP */
+        justify-content: center;
+        text-align: center;
+        padding: 15px 20px;
+        font-size: 0.9rem;
+    }
+}
