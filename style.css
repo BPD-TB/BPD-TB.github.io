@@ -1,217 +1,210 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2867
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+/* Reset dasar agar tampilan rapi di semua browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-\f0\fs24 \cf0 /* Reset dasar agar tampilan rapi di semua browser */\
-* \{\
-    margin: 0;\
-    padding: 0;\
-    box-sizing: border-box;\
-\}\
-\
-body \{\
-    font-family: 'Poppins', sans-serif; /* Font modern */\
-    background-color: #f9f9fa; /* Warna latar putih gading halus */\
-    color: #333;\
-    overflow-x: hidden; /* Mencegah scroll menyamping */\
-\}\
-\
-/* --- BAGIAN NAVIGASI --- */\
-.navbar \{\
-    display: flex;\
-    justify-content: space-between;\
-    align-items: center;\
-    padding: 20px 5%;\
-    background-color: transparent;\
-\}\
-\
-.logo \{\
-    font-weight: 700;\
-    font-size: 1.5rem;\
-    color: #2c3e50;\
-    letter-spacing: -1px;\
-\}\
-\
-.nav-links \{\
-    list-style: none;\
-    display: flex;\
-    gap: 30px;\
-\}\
-\
-.nav-links a \{\
-    text-decoration: none;\
-    color: #555;\
-    font-size: 0.9rem;\
-    transition: color 0.3s;\
-\}\
-\
-.nav-links a:hover \{\
-    color: #000;\
-\}\
-\
-/* --- BAGIAN HERO (UTAMA) --- */\
-.hero \{\
-    display: flex;\
-    min-height: 90vh; /* Tinggi hampir layar penuh */\
-    padding: 0 5%;\
-    align-items: center;\
-    position: relative;\
-\}\
-\
-/* Kolom Kiri: Konten Teks */\
-.hero-content \{\
-    flex: 1; /* Mengambil 50% lebar */\
-    padding-right: 50px;\
-    z-index: 2; /* Agar teks di atas elemen lain */\
-\}\
-\
-.hero-content h1 \{\
-    font-size: 3.5rem;\
-    line-height: 1.2;\
-    margin-bottom: 20px;\
-    color: #1a1a1a;\
-\}\
-\
-.hero-content p \{\
-    font-size: 1.1rem;\
-    color: #666;\
-    margin-bottom: 30px;\
-    line-height: 1.6;\
-    max-width: 500px;\
-\}\
-\
-.btn-primary \{\
-    display: inline-block;\
-    background-color: #9b72cf; /* Warna Ungu sesuai gambar */\
-    color: white;\
-    padding: 12px 35px;\
-    border-radius: 8px;\
-    text-decoration: none;\
-    font-weight: 500;\
-    box-shadow: 0 4px 15px rgba(155, 114, 207, 0.4);\
-    transition: transform 0.2s;\
-\}\
-\
-.btn-primary:hover \{\
-    transform: translateY(-2px);\
-\}\
-\
-/* Kolom Kanan: Visual Abstrak */\
-.hero-visual \{\
-    flex: 1; /* Mengambil 50% lebar sisa */\
-    position: relative;\
-    height: 600px;\
-    display: flex;\
-    justify-content: center;\
-    align-items: center;\
-\}\
-\
-/* --- MEMBUAT BENTUK GEOMETRIS DENGAN CSS --- */\
-/* Anda bisa mengganti ini dengan tag <img> jika punya gambar asli */\
-\
-.shape \{\
-    position: absolute;\
-\}\
-\
-/* Bentuk Ungu Panjang */\
-.shape-purple-long \{\
-    width: 150px;\
-    height: 300px;\
-    background: linear-gradient(to bottom, #a58bd5, #7d5BA6);\
-    top: 0;\
-    right: 150px;\
-    border-bottom-left-radius: 100px;\
-    border-bottom-right-radius: 100px;\
-    opacity: 0.9;\
-\}\
-\
-/* Lingkaran Hijau Tosca */\
-.shape-teal-circle \{\
-    width: 120px;\
-    height: 120px;\
-    background-color: #7dd0bf;\
-    border-radius: 50%;\
-    top: 50px;\
-    right: 80px;\
-    z-index: 2;\
-    box-shadow: -10px 10px 20px rgba(0,0,0,0.1);\
-\}\
-\
-/* Lingkaran Oranye Besar */\
-.shape-orange-circle \{\
-    width: 180px;\
-    height: 180px;\
-    background-color: #e85d35;\
-    border-radius: 50%;\
-    bottom: 100px;\
-    left: 50px;\
-\}\
-\
-/* Lingkaran Pink Pudar */\
-.shape-pink-circle \{\
-    width: 120px;\
-    height: 120px;\
-    background-color: #e6a49f;\
-    border-radius: 50%;\
-    bottom: 150px;\
-    left: 180px;\
-    opacity: 0.8;\
-\}\
-\
-/* Persegi Panjang Biru Bertumpuk */\
-.shape-blue-rects \{\
-    position: absolute;\
-    right: 50px;\
-    top: 250px;\
-    display: flex;\
-    flex-direction: column;\
-    gap: 10px;\
-\}\
-\
-.shape-blue-rects span \{\
-    display: block;\
-    background-color: #5d75a8;\
-    width: 50px;\
-\}\
-.shape-blue-rects span:nth-child(1) \{ height: 15px; \}\
-.shape-blue-rects span:nth-child(2) \{ height: 25px; \}\
-.shape-blue-rects span:nth-child(3) \{ height: 60px; \} /* Balok panjang */\
-\
-/* Pola Titik-titik */\
-.dots-pattern \{\
-    position: absolute;\
-    bottom: 80px;\
-    left: 100px;\
-    width: 100px;\
-    height: 100px;\
-    background-image: radial-gradient(#000 1.5px, transparent 1.5px);\
-    background-size: 20px 20px;\
-    z-index: 3;\
-\}\
-\
-/* Responsif: Jika dibuka di HP */\
-@media (max-width: 768px) \{\
-    .hero \{\
-        flex-direction: column-reverse; /* Gambar di atas, teks di bawah */\
-        text-align: center;\
-        padding-top: 50px;\
-    \}\
-\
-    .hero-content \{\
-        padding-right: 0;\
-    \}\
-    \
-    .hero-visual \{\
-        width: 100%;\
-        height: 400px;\
-        transform: scale(0.7); /* Memperkecil gambar di HP */\
-    \}\
-    \
-    .navbar \{\
-        flex-direction: column;\
-        gap: 15px;\
-    \}\
-\}}
+body {
+    font-family: 'Poppins', sans-serif; /* Font modern */
+    background-color: #f9f9fa; /* Warna latar putih gading halus */
+    color: #333;
+    overflow-x: hidden; /* Mencegah scroll menyamping */
+}
+
+/* --- BAGIAN NAVIGASI --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: transparent;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* --- BAGIAN HERO (UTAMA) --- */
+.hero {
+    display: flex;
+    min-height: 90vh; /* Tinggi hampir layar penuh */
+    padding: 0 5%;
+    align-items: center;
+    position: relative;
+}
+
+/* Kolom Kiri: Konten Teks */
+.hero-content {
+    flex: 1; /* Mengambil 50% lebar */
+    padding-right: 50px;
+    z-index: 2; /* Agar teks di atas elemen lain */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #9b72cf; /* Warna Ungu sesuai gambar */
+    color: white;
+    padding: 12px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(155, 114, 207, 0.4);
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+/* Kolom Kanan: Visual Abstrak */
+.hero-visual {
+    flex: 1; /* Mengambil 50% lebar sisa */
+    position: relative;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- MEMBUAT BENTUK GEOMETRIS DENGAN CSS --- */
+/* Anda bisa mengganti ini dengan tag <img> jika punya gambar asli */
+
+.shape {
+    position: absolute;
+}
+
+/* Bentuk Ungu Panjang */
+.shape-purple-long {
+    width: 150px;
+    height: 300px;
+    background: linear-gradient(to bottom, #a58bd5, #7d5BA6);
+    top: 0;
+    right: 150px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    opacity: 0.9;
+}
+
+/* Lingkaran Hijau Tosca */
+.shape-teal-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #7dd0bf;
+    border-radius: 50%;
+    top: 50px;
+    right: 80px;
+    z-index: 2;
+    box-shadow: -10px 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Lingkaran Oranye Besar */
+.shape-orange-circle {
+    width: 180px;
+    height: 180px;
+    background-color: #e85d35;
+    border-radius: 50%;
+    bottom: 100px;
+    left: 50px;
+}
+
+/* Lingkaran Pink Pudar */
+.shape-pink-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #e6a49f;
+    border-radius: 50%;
+    bottom: 150px;
+    left: 180px;
+    opacity: 0.8;
+}
+
+/* Persegi Panjang Biru Bertumpuk */
+.shape-blue-rects {
+    position: absolute;
+    right: 50px;
+    top: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.shape-blue-rects span {
+    display: block;
+    background-color: #5d75a8;
+    width: 50px;
+}
+.shape-blue-rects span:nth-child(1) { height: 15px; }
+.shape-blue-rects span:nth-child(2) { height: 25px; }
+.shape-blue-rects span:nth-child(3) { height: 60px; } /* Balok panjang */
+
+/* Pola Titik-titik */
+.dots-pattern {
+    position: absolute;
+    bottom: 80px;
+    left: 100px;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(#000 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    z-index: 3;
+}
+
+/* Responsif: Jika dibuka di HP */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse; /* Gambar di atas, teks di bawah */
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .hero-content {
+        padding-right: 0;
+    }
+    
+    .hero-visual {
+        width: 100%;
+        height: 400px;
+        transform: scale(0.7); /* Memperkecil gambar di HP */
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
