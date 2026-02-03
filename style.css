@@ -339,3 +339,60 @@ body {
         font-size: 0.9rem;
     }
 }
+
+/* --- TAMBAHAN STYLE UNTUK PROGRAM PRIORITAS --- */
+
+.prioritas-wrapper {
+    margin-top: 50px;
+    text-align: left; /* Kembalikan text align ke kiri untuk list */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prioritas-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center; /* Judul tetap tengah */
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Membuat list menjadi 2 kolom rapi */
+.prioritas-list {
+    list-style: none; /* Hilangkan bullet bawaan */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi menjadi 2 kolom sama besar */
+    gap: 15px 40px; /* Jarak antar baris dan antar kolom */
+}
+
+.prioritas-list li {
+    font-size: 1rem;
+    color: #555;
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Bayangan sangat halus */
+    border-left: 5px solid #9b72cf; /* Garis ungu di kiri sebagai aksen */
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.prioritas-list li:hover {
+    transform: translateX(5px); /* Efek gerak sedikit saat di-hover */
+    background-color: #fcfcfc;
+}
+
+/* Responsif untuk HP: Ubah jadi 1 kolom agar tidak sempit */
+@media (max-width: 768px) {
+    .prioritas-list {
+        grid-template-columns: 1fr; /* Jadi 1 kolom memanjang ke bawah */
+    }
+    
+    .prioritas-wrapper {
+        padding: 0 10px;
+    }
+}
