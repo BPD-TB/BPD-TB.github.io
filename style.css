@@ -1,31 +1,64 @@
-/* Reset dasar agar tampilan rapi di semua browser */
+/* Reset dasar */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif; /* Font modern */
-    background-color: #f9f9fa; /* Warna latar putih gading halus */
-    color: #333;
-    overflow-x: hidden; /* Mencegah scroll menyamping */
+html {
+    scroll-behavior: smooth; /* Efek scroll halus saat klik menu */
 }
 
-/* --- BAGIAN NAVIGASI --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9fa;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* --- BAGIAN NAVIGASI (DIPERBARUI) --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    background-color: transparent;
+    padding: 15px 5%; /* Padding sedikit diperkecil agar rapi */
+    background-color: #ffffff; /* Tambah background putih agar tidak transparan */
+    position: sticky; /* Agar menu tetap di atas saat scroll (opsional) */
+    top: 0;
+    z-index: 1000; /* PENTING: Agar menu selalu di atas elemen lain */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Bayangan halus */
 }
 
-.logo {
+/* Wrapper untuk Logo dan Teks */
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak antara logo dan teks */
+}
+
+.brand-logo {
+    height: 55px; /* Sesuaikan tinggi logo */
+    width: auto;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column; /* Menyusun teks atas bawah */
+    line-height: 1.2;
+}
+
+.brand-gov {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #666;
+    letter-spacing: 0.5px;
+}
+
+.brand-name {
+    font-size: 1.25rem;
     font-weight: 700;
-    font-size: 1.5rem;
     color: #2c3e50;
-    letter-spacing: -1px;
+    text-transform: uppercase; /* Memaksa huruf besar semua */
 }
 
 .nav-links {
@@ -37,28 +70,30 @@ body {
 .nav-links a {
     text-decoration: none;
     color: #555;
-    font-size: 0.9rem;
+    font-weight: 500;
+    font-size: 0.95rem;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #000;
+    color: #9b72cf;
 }
 
-/* --- BAGIAN HERO (UTAMA) --- */
+/* --- BAGIAN HERO --- */
 .hero {
     display: flex;
-    min-height: 90vh; /* Tinggi hampir layar penuh */
+    min-height: 90vh;
     padding: 0 5%;
     align-items: center;
     position: relative;
+    /* Pastikan z-index hero lebih rendah dari navbar */
+    z-index: 1; 
 }
 
-/* Kolom Kiri: Konten Teks */
 .hero-content {
-    flex: 1; /* Mengambil 50% lebar */
+    flex: 1;
     padding-right: 50px;
-    z-index: 2; /* Agar teks di atas elemen lain */
+    z-index: 2;
 }
 
 .hero-content h1 {
@@ -78,7 +113,7 @@ body {
 
 .btn-primary {
     display: inline-block;
-    background-color: #9b72cf; /* Warna Ungu sesuai gambar */
+    background-color: #9b72cf;
     color: white;
     padding: 12px 35px;
     border-radius: 8px;
@@ -92,119 +127,125 @@ body {
     transform: translateY(-2px);
 }
 
-/* Kolom Kanan: Visual Abstrak */
+/* --- VISUAL ABSTRAK --- */
 .hero-visual {
-    flex: 1; /* Mengambil 50% lebar sisa */
+    flex: 1;
     position: relative;
     height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1; /* Pastikan di bawah konten teks */
 }
 
-/* --- MEMBUAT BENTUK GEOMETRIS DENGAN CSS --- */
-/* Anda bisa mengganti ini dengan tag <img> jika punya gambar asli */
+.shape { position: absolute; }
 
-.shape {
-    position: absolute;
-}
-
-/* Bentuk Ungu Panjang */
 .shape-purple-long {
-    width: 150px;
-    height: 300px;
+    width: 150px; height: 300px;
     background: linear-gradient(to bottom, #a58bd5, #7d5BA6);
-    top: 0;
-    right: 150px;
+    top: 0; right: 150px;
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
     opacity: 0.9;
 }
 
-/* Lingkaran Hijau Tosca */
 .shape-teal-circle {
-    width: 120px;
-    height: 120px;
+    width: 120px; height: 120px;
     background-color: #7dd0bf;
     border-radius: 50%;
-    top: 50px;
-    right: 80px;
+    top: 50px; right: 80px;
     z-index: 2;
     box-shadow: -10px 10px 20px rgba(0,0,0,0.1);
 }
 
-/* Lingkaran Oranye Besar */
 .shape-orange-circle {
-    width: 180px;
-    height: 180px;
+    width: 180px; height: 180px;
     background-color: #e85d35;
     border-radius: 50%;
-    bottom: 100px;
-    left: 50px;
+    bottom: 100px; left: 50px;
 }
 
-/* Lingkaran Pink Pudar */
 .shape-pink-circle {
-    width: 120px;
-    height: 120px;
+    width: 120px; height: 120px;
     background-color: #e6a49f;
     border-radius: 50%;
-    bottom: 150px;
-    left: 180px;
+    bottom: 150px; left: 180px;
     opacity: 0.8;
 }
 
-/* Persegi Panjang Biru Bertumpuk */
 .shape-blue-rects {
-    position: absolute;
-    right: 50px;
-    top: 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    position: absolute; right: 50px; top: 250px;
+    display: flex; flex-direction: column; gap: 10px;
 }
-
-.shape-blue-rects span {
-    display: block;
-    background-color: #5d75a8;
-    width: 50px;
-}
+.shape-blue-rects span { display: block; background-color: #5d75a8; width: 50px; }
 .shape-blue-rects span:nth-child(1) { height: 15px; }
 .shape-blue-rects span:nth-child(2) { height: 25px; }
-.shape-blue-rects span:nth-child(3) { height: 60px; } /* Balok panjang */
+.shape-blue-rects span:nth-child(3) { height: 60px; }
 
-/* Pola Titik-titik */
 .dots-pattern {
-    position: absolute;
-    bottom: 80px;
-    left: 100px;
-    width: 100px;
-    height: 100px;
+    position: absolute; bottom: 80px; left: 100px;
+    width: 100px; height: 100px;
     background-image: radial-gradient(#000 1.5px, transparent 1.5px);
     background-size: 20px 20px;
     z-index: 3;
 }
 
-/* Responsif: Jika dibuka di HP */
+/* Section Tambahan (Visi Misi & Direktori) */
+.section-content {
+    padding: 80px 5%;
+    min-height: 50vh;
+}
+.section-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* --- RESPONSIF (MOBILE) --- */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Susun logo dan menu ke bawah */
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .brand-wrapper {
+        width: 100%;
+        /* Agar teks tidak terlalu besar di HP */
+    }
+    
+    .brand-gov { font-size: 0.7rem; }
+    .brand-name { font-size: 1rem; }
+    .brand-logo { height: 40px; }
+
+    .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 20px;
+        padding-top: 10px;
+        border-top: 1px solid #eee; /* Garis pemisah halus */
+    }
+
     .hero {
-        flex-direction: column-reverse; /* Gambar di atas, teks di bawah */
+        flex-direction: column-reverse;
         text-align: center;
-        padding-top: 50px;
+        padding-top: 40px; /* Jarak agar tidak terlalu mepet navbar */
+        min-height: auto;
     }
 
     .hero-content {
         padding-right: 0;
+        margin-top: -50px; /* Tarik teks ke atas sedikit mendekati gambar */
+        z-index: 10; /* Pastikan teks di atas visual jika overlap */
     }
     
+    .hero-content h1 { font-size: 2.5rem; }
+
     .hero-visual {
         width: 100%;
-        height: 400px;
-        transform: scale(0.7); /* Memperkecil gambar di HP */
-    }
-    
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
+        height: 350px;
+        transform: scale(0.65); /* Perkecil visual di HP */
+        margin-bottom: 20px;
     }
 }
